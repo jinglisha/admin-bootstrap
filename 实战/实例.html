@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
-    <title>bootstrap</title>
+    <title>后台管理系统-bootstrap版</title>
     <style>
 		
 	</style>
@@ -20,20 +20,128 @@
             <div class="d-none d-lg-block leftCon">
                 <div class="d-flex justify-content-center align-items-center logo">
                     <img src="images/logo.png" alt="">
-                    <small class="text-white ml-2 font-weight-bold">渡一教育</small>
+                    <small class="text-white ml-2 font-weight-bold">后台管理</small>
                 </div>
-                <div>
-                    <P>景莉莎</P>
-                    <P>1039219540@qq.com</P>
-                    <P>退出登录</P>
+                <div class="text-center py-4 border-bottom info">
+                    <P class="mb-2">景莉莎</P>
+                    <P class="mb-2">1039219540@qq.com</P>
+                    <P class="mb-2" >退出登录</P>
                 </div>
+                <div class="nav flex-column list">
+                    <h4 class="h6 font-weight-bold p-3 ml-2">账号管理</h4>
+                    <a href="#ziyuan" class="nav-link p-2 ml-5 rounded-left active" data-toggle="tab">资源管理</a>
+                    <a href="#quanxian" class="nav-link p-2 ml-5 rounded-left" data-toggle="tab">权限管理</a>
+                    <a href="#yonghu" class="nav-link p-2 ml-5 rounded-left" data-toggle="tab">用户管理</a>
+                    <a href="#xiugai" class="nav-link p-2 ml-5 rounded-left" data-toggle="tab">修改密码</a>
+                    <h4 class="h6 font-weight-bold p-3 ml-2">地区管理</h4>
+                    <a href="#diqu" class="nav-link p-2 ml-5 rounded-left" data-toggle="tab">地区管理</a>
+                    <a href="#guize" class="nav-link p-2 ml-5 rounded-left" data-toggle="tab">规则管理</a>
+                    
+                </div>
+
+
+
             </div>
             
             <!-- 右侧内容 -->
-            <div class="rightCon"></div>
+            <div class="col py-5 px-4 rightCon">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="ziyuan">
+                        <button class="btn btn-outline-warning mb-5" data-toggle="modal" data-target="#modal">添加资源</button>
+                        <table class="table">
+                            <thead>
+                                <th style="width: 10%;">编码</th>
+                                <th style="width: 20%;">名称</th>
+                                <th>链接</th>
+                                <th>操作</th>
+                            </thead>
+                            <tbody>
+                                 <tr>
+                                     <td>1</td>
+                                     <td class="dropdown-toggle" data-toggle="collapse" data-target="#manage ">系统管理 </td>
+                                     <td>/admin/system/userlist/software/</td>
+                                     <td>
+                                         <button class="btn btn-success btn-sm">修改</button>
+                                         <button class="btn btn-danger btn-sm">删除</button>
+                                     </td>
+                                 </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="collapse show" id="manage">
+                            <table class="table">                               
+                                <tbody>
+                                     <tr>
+                                         <td style="width: 10%;">2</td>
+                                         <td style="width: 20%;">系统管理 </td>
+                                         <td>/admin/system/userlist/software/</td>
+                                         <td>
+                                             <button class="btn btn-success btn-sm">修改</button>
+                                             <button class="btn btn-danger btn-sm">删除</button>
+                                         </td>
+                                     </tr>
+                                     <tr>
+                                        <td>3</td>
+                                        <td>系统管理 </td>
+                                        <td>/admin/system/userlist/software/</td>
+                                        <td>
+                                            <button class="btn btn-success btn-sm">修改</button>
+                                            <button class="btn btn-danger btn-sm">删除</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>    
+                    </div>
+                    <div class="tab-pane" id="quanxian">权限管理</div>
+                    <div class="tab-pane" id="yonghu">用户管理</div>
+                    <div class="tab-pane" id="xiugai">
+                        <form class="w-50 m-auto">
+                            <div class="form-group row">
+                                <label for="password1" class="col-form-label col-sm-2">原密码</label>
+                                <input type="password" id="password1" class="form-control col-sm-10">
+                            </div>
+                            <div class="form-group row">
+                                <label for="password2" class="col-form-label col-sm-2">新密码</label>
+                                <input type="password" id="password2" class="form-control col-sm-10">
+                            </div>
+                            <div class="form-group row">
+                                <label for="password3" class="col-form-label col-sm-2">确认密码</label>
+                                <input type="password" id="password3" class="form-control col-sm-10">
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-secondary">取消</button>
+                                <button class="btn btn-secondary">保存</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane" id="diqu">地区管理</div>
+                    <div class="tab-pane" id="guize">规则管理</div>
+                </div>
+            </div>
         </div>
     </div>
     
+
+    <div class="modal fade" id="modal">
+        <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">标题</h5>
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              内容
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+              <button type="button" class="btn btn-primary">保存</button>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
 
